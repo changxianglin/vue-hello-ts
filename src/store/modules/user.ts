@@ -15,8 +15,8 @@ class UsersModule extends VuexModule {
   profile?: Profile | null = null
 
   @MutationAction({ mutate: ['user']})
-  async login(UserSubmit: UserSubmit) {
-    const user = await loginUser(UserSubmit)
+  async login(userSubmit: UserSubmit) {
+    const user = await loginUser(userSubmit)
     return { user }
   }
 }

@@ -3,7 +3,7 @@ import { UserSubmit, UserResponse, User } from './models';
 
 export const conduitApi = axios.create({
   baseURL: 'https://conduit.productionready.io/api',
-  timeout: 1000,
+  timeout: 5000,
 })
 
 export function setJWT(jwt: string) {
@@ -15,7 +15,7 @@ export function clearJWT() {
 }
 
 export async function loginUser(user: UserSubmit): Promise<User> {
-    const response = await axios.post('/users/login', {
+    const response = await conduitApi.post('/users/login', {
       user 
     })
     
